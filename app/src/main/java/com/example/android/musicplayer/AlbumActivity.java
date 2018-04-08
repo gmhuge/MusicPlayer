@@ -15,11 +15,15 @@
  */
 package com.example.android.musicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,33 +32,59 @@ public class AlbumActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
 
 
+/*
+        setContentView(R.layout.list_item);
+
+
+        Button backButton = findViewById(R.id.play);
+          backButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent backIntent = new Intent(AlbumActivity.this, PlayActivity.class);
+                        startActivity(backIntent);
+                    }
+                });
+
+*/
+        setContentView(R.layout.song_list);
 
         ArrayList<Song>songs1 = new ArrayList<>();
-
 
         songs1.add(new Song("Song1_1", 5.2));
         songs1.add(new Song("Song1_2", 3.4));
         songs1.add(new Song("Song1_3", 7.1));
+        songs1.add(new Song("Song1_4", 7.1));
+        songs1.add(new Song("Song1_5", 7.1));
+        songs1.add(new Song("Song1_6", 7.1));
+        songs1.add(new Song("Song1_7", 7.1));
+        songs1.add(new Song("Song1_8", 7.1));
+        songs1.add(new Song("Song1_9", 7.1));
+        songs1.add(new Song("Song1_10", 7.1));
+        songs1.add(new Song("Song1_11", 7.1));
+        songs1.add(new Song("Song1_12", 7.1));
+        songs1.add(new Song("Song1_13", 7.1));
+        songs1.add(new Song("Song1_14", 7.1));
+        songs1.add(new Song("Song1_15", 7.1));
+        songs1.add(new Song("Song1_16", 7.1));
+        songs1.add(new Song("Song1_17", 7.1));
+        songs1.add(new Song("Song1_18", 7.1));
+        songs1.add(new Song("Song1_19", 7.1));
+        songs1.add(new Song("Song1_20", 7.1));
 
 
-        // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
-        // adapter knows how to create list items for each item in the list.
         SongAdapter adapter = new SongAdapter(this, songs1, R.color.category_phrases);
 
-        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml layout file.
 
-        setContentView(R.layout.song_list);
+
         ListView listView = findViewById(R.id.list);
 
-        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
-        // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
 
-
     }
+
+
+
 }

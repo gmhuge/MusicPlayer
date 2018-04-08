@@ -4,24 +4,49 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public int testtest = 10;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-    start();
+        //setContentView(R.layout.list_item);
+     //   View v = inflater.inflate(R.layout.list_item, null);
+
+
+
+  //      setContentView(R.layout.activity_main);
+
+        Button startButton = findViewById(R.id.start);
+
+
+//        startButton.setText("@@@@@@@@@@@@");
+        startButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        start();
+                    }
+                });
+        //  start();
     }
 
     public void start (){
         Intent albumIntent = new Intent(MainActivity.this, AlbumActivity.class);
-
-        // Start the new activity
         startActivity(albumIntent);
+
+
     }
 
     public void test() {

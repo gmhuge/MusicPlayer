@@ -18,6 +18,10 @@
         </activity>
         <activity
             android:name=".AlbumActivity"
-            android:label="Album" />    </application>
+            android:label="Album" />
+        <activity
+            android:name=".PlayActivity"
+            android:label="Play" />
+    </application>
 
 </manifest>
